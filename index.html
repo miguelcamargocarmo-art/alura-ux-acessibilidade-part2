@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vida Ativa - Exercícios para a Terceira Idade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Objetos Geométricos 3D no Fundo -->
+    <div class="bg-3d-container">
+        <div class="shape-3d cube">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+        </div>
+        <div class="shape-3d pyramid">
+            <div class="pyramid-face pf1"></div>
+            <div class="pyramid-face pf2"></div>
+            <div class="pyramid-face pf3"></div>
+            <div class="pyramid-face pf4"></div>
+        </div>
+        <div class="shape-3d ring"></div>
+    </div>
+
+    <header>
+        <h1>Vida Ativa</h1>
+        <p>Dicas simples de exercícios para a academia</p>
+    </header>
+
+    <main>
+        <!-- CARD 1 -->
+        <article class="card">
+            <h2>1. Caminhada na Esteira</h2>
+            <p><strong>Benefício:</strong> Melhora a circulação e fortalece o coração.</p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <button class="btn-destacar" onclick="document.getElementById('modal1').showModal()">Destacar Exercício</button>
+                <a href="caminhada-esteira.html" class="btn-destacar btn-secundario">Saber Mais (Página Completa)</a>
+            </div>
+
+            <dialog id="modal1" class="modal-card">
+                <h2>1. Caminhada na Esteira</h2>
+                <p><strong>Benefício:</strong> Melhora a circulação e fortalece o coração.</p>
+                <p><strong>Como fazer:</strong> Caminhe em ritmo confortável por 15 a 20 minutos. Mantenha a postura ereta e segure nas barras laterais se precisar de apoio.</p>
+                <button class="btn-fechar" onclick="document.getElementById('modal1').close()">Fechar X</button>
+            </dialog>
+        </article>
+
+        <!-- CARD 2 -->
+        <article class="card">
+            <h2>2. Sentar e Levantar da Cadeira</h2>
+            <p><strong>Benefício:</strong> Fortalece as pernas para facilitar atividades do dia a dia.</p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <button class="btn-destacar" onclick="document.getElementById('modal2').showModal()">Destacar Exercício</button>
+                <a href="sentar-levantar.html" class="btn-destacar btn-secundario">Saber Mais (Página Completa)</a>
+            </div>
+
+            <dialog id="modal2" class="modal-card">
+                <h2>2. Sentar e Levantar da Cadeira</h2>
+                <p><strong>Benefício:</strong> Fortalece as pernas para facilitar atividades do dia a dia.</p>
+                <p><strong>Como fazer:</strong> Sente-se em um banco firme. Incline o corpo levemente para frente e levante-se usando a força das pernas. Repita 8 a 10 vezes.</p>
+                <button class="btn-fechar" onclick="document.getElementById('modal2').close()">Fechar X</button>
+            </dialog>
+        </article>
+
+        <!-- CARD 3 -->
+        <article class="card">
+            <h2>3. Remada Sentada na Máquina</h2>
+            <p><strong>Benefício:</strong> Fortalece as costas e melhora a postura.</p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <button class="btn-destacar" onclick="document.getElementById('modal3').showModal()">Destacar Exercício</button>
+                <a href="remada-sentada.html" class="btn-destacar btn-secundario">Saber Mais (Página Completa)</a>
+            </div>
+
+            <dialog id="modal3" class="modal-card">
+                <h2>3. Remada Sentada na Máquina</h2>
+                <p><strong>Benefício:</strong> Fortalece as costas e melhora a postura.</p>
+                <p><strong>Como fazer:</strong> Sente-se de frente para o aparelho, puxe a barra em direção ao abdômen mantendo a coluna reta e retorne devagar. Faça 10 repetições com carga leve.</p>
+                <button class="btn-fechar" onclick="document.getElementById('modal3').close()">Fechar X</button>
+            </dialog>
+        </article>
+    </main>
+
+    <footer>
+        <p>Aviso: Sempre consulte seu médico antes de iniciar novos exercícios.</p>
+    </footer>
+
+</body>
+</html>

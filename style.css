@@ -1,0 +1,271 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    line-height: 1.6;
+    background-color: #121212;
+    color: #E0E0E0;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* --- FUNDO COM FORMAS GEOMÉTRICAS 3D --- */
+.bg-3d-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    perspective: 1000px;
+    overflow: hidden;
+}
+
+.shape-3d {
+    position: absolute;
+    transform-style: preserve-3d;
+    opacity: 0.35;
+    animation: spin3d 20s infinite linear;
+}
+
+/* Forma 1: Cubo 3D */
+.cube {
+    width: 80px;
+    height: 80px;
+    top: 15%;
+    left: 8%;
+}
+
+.cube .face {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: #004D40;
+    border: 2px solid #80CBC4;
+}
+
+.cube .front  { transform: rotateY(0deg) translateZ(40px); }
+.cube .back   { transform: rotateY(180deg) translateZ(40px); }
+.cube .right  { transform: rotateY(90deg) translateZ(40px); }
+.cube .left   { transform: rotateY(-90deg) translateZ(40px); }
+.cube .top    { transform: rotateX(90deg) translateZ(40px); }
+.cube .bottom { transform: rotateX(-90deg) translateZ(40px); }
+
+/* Forma 2: Pirâmide 3D */
+.pyramid {
+    width: 0;
+    height: 0;
+    top: 60%;
+    right: 10%;
+    animation-duration: 25s;
+}
+
+.pyramid-face {
+    position: absolute;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 90px solid #004D40;
+    transform-origin: 50% 100%;
+}
+
+.pf1 { transform: rotateY(0deg) rotateX(30deg); }
+.pf2 { transform: rotateY(90deg) rotateX(30deg); }
+.pf3 { transform: rotateY(180deg) rotateX(30deg); }
+.pf4 { transform: rotateY(270deg) rotateX(30deg); }
+
+/* Forma 3: Anel 3D */
+.ring {
+    width: 100px;
+    height: 100px;
+    border: 12px solid #00796B;
+    border-radius: 50%;
+    top: 40%;
+    left: 80%;
+    animation-duration: 18s;
+}
+
+@keyframes spin3d {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(0px);
+    }
+    50% {
+        transform: rotateX(180deg) rotateY(180deg) rotateZ(90deg) translateY(-30px);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(180deg) translateY(0px);
+    }
+}
+
+/* Cabeçalho */
+header {
+    background-color: #1E1E1E;
+    color: #80CBC4;
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border: 1px solid #004D40;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+header h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+}
+
+header p {
+    font-size: 24px;
+}
+
+/* Container de Conteúdo */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card, .page-content {
+    background-color: #1E1E1E;
+    border: 2px solid #00796B;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.card h2, .page-content h2 {
+    color: #80CBC4;
+    font-size: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #333333;
+    padding-bottom: 10px;
+}
+
+.page-content h3 {
+    color: #26A69A;
+    font-size: 25px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.page-content p {
+    margin-bottom: 15px;
+}
+
+.page-content ul {
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+.page-content li {
+    margin-bottom: 8px;
+}
+
+/* Ilustrações e Figuras */
+.figure-container {
+    text-align: center;
+    margin: 25px 0;
+    background-color: #262626;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #004D40;
+}
+
+.figure-container svg {
+    max-width: 100%;
+    height: auto;
+}
+
+.figure-caption {
+    font-size: 18px;
+    color: #80CBC4;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Botões */
+.btn-destacar, .btn-voltar {
+    display: inline-block;
+    background-color: #004D40;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: 1px solid #80CBC4;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn-secundario {
+    background-color: #00796B;
+}
+
+.btn-destacar:hover, .btn-voltar:hover {
+    background-color: #26A69A;
+    color: #121212;
+}
+
+.btn-fechar {
+    background-color: #D32F2F;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.btn-fechar:hover {
+    background-color: #EF5350;
+}
+
+/* Modal */
+.modal-card {
+    background-color: #1E1E1E;
+    color: #E0E0E0;
+    border: 2px solid #80CBC4;
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 650px;
+    width: 90%;
+    margin: auto;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.modal-card h2 {
+    color: #80CBC4;
+    font-size: 32px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #333333;
+    padding-bottom: 10px;
+}
+
+.modal-card::backdrop {
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+}
+
+/* Rodapé */
+footer {
+    max-width: 800px;
+    margin: 30px auto 0 auto;
+    text-align: center;
+    background-color: #262626;
+    color: #FFD54F;
+    padding: 20px;
+    border: 1px solid #FFB300;
+    border-radius: 12px;
+    font-weight: bold;
+}
